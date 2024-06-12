@@ -63,22 +63,23 @@ let historiaFinal = "";
 function mostraPergunta() {
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
-  mostraAlternativas();
-}
-  function mostraAlternativas() {}
-     for (const alternativa of perguntaAtual.alternativas) {
-         const botaoAlternativas = document.createElement("button");
-       botaoAlternativas.textContent = alternativa.texto;
-       botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-       caixaAlternativas.appendChild(botaoAlternativas);
-       }
+    mostraAlternativas();
 }
 
-function repostaSelecionada(opcaoSelecionada){
-  const afirmacoes = opcaoSelecionada.afirmacoes;
-  historiaFinal = afirmacoes;
-  atual++;
-  mostraPergunta();
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
+}
+
+function respostaSelecionada(opcaoSelecionada){
+    const afirmacoes = opcaoSelecionada.afirmacoes;
+    historiaFinal = afirmacoes;
+    atual++;
+    mostraPergunta();
 }
 
 mostraPergunta();
