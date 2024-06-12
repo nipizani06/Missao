@@ -46,7 +46,7 @@ const perguntas = [
     alternativas: [
       { 
       texto: "Eponíquio.",
-      afirmação: " Leito ungueal."
+      afirmação: "Leito ungueal."
        ]
   }
 ];
