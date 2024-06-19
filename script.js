@@ -82,10 +82,11 @@ const perguntas = [
                 texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
                 texto: "Leito ungueal",
                 afirmacao: "afirmação"
-            }
+           }
         ]
     },
 ];
+
 
 let atual = 0;
 let perguntaAtual;
@@ -98,6 +99,7 @@ function mostraPergunta() {
     }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
     mostraAlternativas();
 }
 
@@ -110,16 +112,17 @@ function mostraAlternativas(){
     }
 }
 
-function respostaSelecionada(opcaoSelecionada){
+function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = opcaoSelecionada.afirmacao;
     historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
 }
 
-function mostraResultado(){
-    caixa.Perguntas.textContent = "Em 2049...";
+function mostraResultado() {
+    caixaPerguntas.textContent = "Em 2049...";
     textoResultado.textContent = historiaFinal;
-    caixa.Altenativas.textContent = "";
-    
+    caixaAlternativas.textContent = "";
+}
+
 mostraPergunta();
