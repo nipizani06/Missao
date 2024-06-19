@@ -105,6 +105,6 @@ function respostaSelecionada(opcaoSelecionada){
 function mostraResultado(){
     caixa.Perguntas.textContent = "Em 2049...";
     textoResultado.textContent = historiaFinal;
-    caixa.Altenativas.textContent = " ";
+    caixa.Altenativas.textContent = "";
     
 mostraPergunta();
