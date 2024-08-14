@@ -1,1 +1,1 @@
-
+export function aletorio (lista){
